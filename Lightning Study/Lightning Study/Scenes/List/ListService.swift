@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ListServicing {
-    func getSomething()
+    func getTopNodes(completion: @escaping (Result<[Node]?, HTTPError>) -> Void)
 }
 
 final class ListService {
@@ -14,7 +14,9 @@ final class ListService {
 
 // MARK: - ListServicing.
 extension ListService: ListServicing {
-    func getSomething() {
-        // template
+    func getTopNodes(completion: @escaping (Result<[Node]?, HTTPError>) -> Void) {
+        http.request(service: ListEndpoints.nodes, with: [Node].self) { result in
+            DispatchQueue.main.async { completion(result) }
+        }
     }
 }
