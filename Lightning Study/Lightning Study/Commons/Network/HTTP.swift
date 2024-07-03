@@ -1,15 +1,11 @@
 import Foundation
 
 class HTTP: HTTPProtocol {
+    private var config = URLSessionConfiguration.default
     private var requestTask: URLSessionDataTaskProtocol?
     private var session: URLSessionProtocol
-    private var config: URLSessionConfiguration = {
-        let config = URLSessionConfiguration()
-        return config
-    }()
     
-    init(session: URLSessionProtocol = URLSession.shared,
-         requestTask: URLSessionDataTaskProtocol? = nil) {
+    init(session: URLSessionProtocol = URLSession.shared, requestTask: URLSessionDataTaskProtocol? = nil) {
         self.session = session
         self.requestTask = requestTask
     }
@@ -56,7 +52,6 @@ class HTTP: HTTPProtocol {
         }
     
     private func prettyPrint(service: URLRequest, data: Data?) {
-        
         debugPrint("===================== REQUEST =====================")
         debugPrint("===> URL: \(service.url?.absoluteString ?? "")")
         let httpMethod = service.httpMethod
