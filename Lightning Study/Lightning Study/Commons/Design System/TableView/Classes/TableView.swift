@@ -1,8 +1,8 @@
 import UIKit
 
 final class TableView<Section>: UITableView,
-                                       UITableViewDataSource,
-                                       UITableViewDelegate where Section: Hashable & CaseIterable {
+                                UITableViewDataSource,
+                                UITableViewDelegate where Section: Hashable & CaseIterable {
     // MARK: - Property(ies).
     private(set) var sections = [TableViewSection<Section>]()
     
