@@ -59,6 +59,7 @@
 		A0B7DA5A2C35E7EF0023147F /* ConnectionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA4D2C35E7EF0023147F /* ConnectionCheck.swift */; };
 		A0B7DA5B2C35E7EF0023147F /* HTTPDecodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA4E2C35E7EF0023147F /* HTTPDecodeBuilder.swift */; };
 		A0B7DA5C2C35E7EF0023147F /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA4F2C35E7EF0023147F /* HTTP.swift */; };
+		A0B7DA5F2C35EE070023147F /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA5E2C35EE070023147F /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		A0B7DA4D2C35E7EF0023147F /* ConnectionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCheck.swift; sourceTree = "<group>"; };
 		A0B7DA4E2C35E7EF0023147F /* HTTPDecodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDecodeBuilder.swift; sourceTree = "<group>"; };
 		A0B7DA4F2C35E7EF0023147F /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		A0B7DA5E2C35EE070023147F /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 		A0B7DA372C35E78F0023147F /* List */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7DA5D2C35EDF70023147F /* Cell */,
 				A0B7DA382C35E7A10023147F /* ListCoordinator.swift */,
 				A0B7DA392C35E7A10023147F /* ListViewController.swift */,
 				A0B7DA3A2C35E7A10023147F /* ListViewModel.swift */,
@@ -414,6 +417,14 @@
 				A0B7DA4E2C35E7EF0023147F /* HTTPDecodeBuilder.swift */,
 			);
 			path = Builders;
+			sourceTree = "<group>";
+		};
+		A0B7DA5D2C35EDF70023147F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7DA5E2C35EE070023147F /* ListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,6 +578,7 @@
 				A0B7D9E92C35E2AE0023147F /* Reusable.swift in Sources */,
 				A0B7D9DE2C35E27B0023147F /* TableViewSection.swift in Sources */,
 				A0B7DA3F2C35E7A10023147F /* ListService.swift in Sources */,
+				A0B7DA5F2C35EE070023147F /* ListCell.swift in Sources */,
 				A0B7DA582C35E7EF0023147F /* ErrorResponseBuilder.swift in Sources */,
 				A0B7D9E72C35E2AE0023147F /* Tappable.swift in Sources */,
 				A0B7DA3D2C35E7A10023147F /* ListViewController.swift in Sources */,
