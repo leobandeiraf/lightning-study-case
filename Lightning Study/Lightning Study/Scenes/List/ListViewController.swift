@@ -23,7 +23,9 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
     
     override func setupConstraints() {}
         
-    override func configureViews() {}
+    override func configureViews() {
+        view.background(color: .init(.systemPink))
+    }
     
     // MARK: - Method(s).
     

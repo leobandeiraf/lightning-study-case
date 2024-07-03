@@ -4,12 +4,10 @@ protocol ListCoordinating {
     func start()
 }
 
-final class ListCoordinator: Coordinator {
+final class ListCoordinator {
     // MARK: - Property(ies).
     weak var navigationController: UINavigationController?
     weak var rootViewController: UIViewController?
-    var parentCoordinator: Coordinator?
-    var childCoordinators = [Coordinator]()
 
     // MARK: - Initialization.
     init(_ navigationController: UINavigationController? = UINavigationController()) {
@@ -21,13 +19,12 @@ final class ListCoordinator: Coordinator {
 extension ListCoordinator: ListCoordinating {
     func start() {
         let service = ListService()
-        let coordinator = ListCoordinator()
         let viewModel = ListViewModel(service: service)
         let viewController = ListViewController(viewModel: viewModel, coordinator: self)
+        let navigationController = UINavigationController(rootViewController: viewController)
         
-        viewModel.display = viewController
-        
+        self.navigationController = navigationController
+        viewController.coordinator = self
         rootViewController = viewController
-        navigationController?.pushViewController(viewController, animated: true)
     }
 }
