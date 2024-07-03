@@ -13,8 +13,10 @@ private extension ListViewController.Layout {
 final class ListViewController: ViewController<ListViewModeling, ListCoordinating> {
     // MARK: - Property(ies).
     fileprivate enum Layout {}
+    fileprivate enum Section: CaseIterable { case list }
     
     // MARK: - Component(s).
+    private lazy var tableView = TableView<Section>()
     
     // MARK: - Override(s).
     
