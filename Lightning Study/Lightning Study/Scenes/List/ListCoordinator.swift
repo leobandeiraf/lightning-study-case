@@ -23,8 +23,10 @@ extension ListCoordinator: ListCoordinating {
         let viewController = ListViewController(viewModel: viewModel, coordinator: self)
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        self.navigationController = navigationController
         viewController.coordinator = self
+        viewModel.viewController = viewController
+        
+        self.navigationController = navigationController
         rootViewController = viewController
     }
 }
