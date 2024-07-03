@@ -1,9 +1,9 @@
 import UIKit
 
-public struct UnderlinedStyle: FontStyle {
-    public let size: CGFloat
-    public let style: UIFont.TextStyle
-    public var fontName: FontConvertible {
+struct UnderlinedStyle: FontStyle {
+    let size: CGFloat
+    let style: UIFont.TextStyle
+    var fontName: FontConvertible {
         switch (isBold, isItalic) {
             case (false, false):
                 return FontFamily.Roboto.regular
@@ -15,10 +15,10 @@ public struct UnderlinedStyle: FontStyle {
                 return FontFamily.Roboto.boldItalic
         }
     }
-    public var isBold: Bool
-    public var isUnderline: Bool
-    public var isItalic: Bool
-    public var isHtml: Bool
+    var isBold: Bool
+    var isUnderline: Bool
+    var isItalic: Bool
+    var isHtml: Bool
 
     init(
         size: CGFloat,
@@ -38,7 +38,7 @@ public struct UnderlinedStyle: FontStyle {
 }
 
 extension UnderlinedStyle: Equatable {
-    public static func ==(_ lhs: UnderlinedStyle, _ rhs: UnderlinedStyle) -> Bool {
+    static func ==(_ lhs: UnderlinedStyle, _ rhs: UnderlinedStyle) -> Bool {
         lhs.size == rhs.size &&
         lhs.fontName.name == rhs.fontName.name &&
         lhs.style == rhs.style &&

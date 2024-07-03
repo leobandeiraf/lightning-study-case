@@ -1,12 +1,12 @@
 import UIKit
 
-public struct MediumStyle: FontStyle {
-    public let size: CGFloat
-    public let style: UIFont.TextStyle
-    public var fontName: FontConvertible { FontFamily.Roboto.medium }
-    public var isBold: Bool
-    public var isItalic: Bool
-    public var isHtml: Bool
+struct MediumStyle: FontStyle {
+    let size: CGFloat
+    let style: UIFont.TextStyle
+    var fontName: FontConvertible { FontFamily.Roboto.medium }
+    var isBold: Bool
+    var isItalic: Bool
+    var isHtml: Bool
 
     init(size: CGFloat, style: UIFont.TextStyle, isBold: Bool = false, isItalic: Bool = false, isHtml: Bool = false) {
         self.size = size
@@ -18,7 +18,7 @@ public struct MediumStyle: FontStyle {
 }
 
 extension MediumStyle: Equatable {
-    public static func ==(_ lhs: MediumStyle, _ rhs: MediumStyle) -> Bool {
+    static func ==(_ lhs: MediumStyle, _ rhs: MediumStyle) -> Bool {
         lhs.size == rhs.size &&
         lhs.fontName.name == rhs.fontName.name &&
         lhs.style == rhs.style &&

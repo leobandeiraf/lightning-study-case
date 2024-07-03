@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol FontStyle: Equatable {
+protocol FontStyle: Equatable {
     var size: CGFloat { get }
     var style: UIFont.TextStyle { get }
     var fontName: FontConvertible { get }
