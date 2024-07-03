@@ -10,7 +10,6 @@
 		A0B7D9A22C35DF700023147F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D9A12C35DF700023147F /* AppDelegate.swift */; };
 		A0B7D9A42C35DF700023147F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D9A32C35DF700023147F /* SceneDelegate.swift */; };
 		A0B7D9A62C35DF700023147F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D9A52C35DF700023147F /* ViewController.swift */; };
-		A0B7D9A92C35DF700023147F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B7D9A72C35DF700023147F /* Main.storyboard */; };
 		A0B7D9AB2C35DF710023147F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B7D9AA2C35DF710023147F /* Assets.xcassets */; };
 		A0B7D9AE2C35DF710023147F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B7D9AC2C35DF710023147F /* LaunchScreen.storyboard */; };
 		A0B7D9B92C35DF710023147F /* Lightning_StudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7D9B82C35DF710023147F /* Lightning_StudyTests.swift */; };
@@ -40,7 +39,6 @@
 		A0B7D9A12C35DF700023147F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B7D9A32C35DF700023147F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A0B7D9A52C35DF700023147F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A0B7D9A82C35DF700023147F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0B7D9AA2C35DF710023147F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0B7D9AD2C35DF710023147F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0B7D9AF2C35DF710023147F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,10 @@
 		A0B7D9A02C35DF700023147F /* Lightning Study */ = {
 			isa = PBXGroup;
 			children = (
-				A0B7D9A12C35DF700023147F /* AppDelegate.swift */,
-				A0B7D9A32C35DF700023147F /* SceneDelegate.swift */,
-				A0B7D9A52C35DF700023147F /* ViewController.swift */,
-				A0B7D9A72C35DF700023147F /* Main.storyboard */,
-				A0B7D9AA2C35DF710023147F /* Assets.xcassets */,
-				A0B7D9AC2C35DF710023147F /* LaunchScreen.storyboard */,
-				A0B7D9AF2C35DF710023147F /* Info.plist */,
+				A0B7D9D42C35E00D0023147F /* Commons */,
+				A0B7D9D32C35E0080023147F /* Scenes */,
+				A0B7D9D22C35E0050023147F /* Sources */,
+				A0B7D9D12C35DFFE0023147F /* Resources */,
 			);
 			path = "Lightning Study";
 			sourceTree = "<group>";
@@ -125,6 +120,40 @@
 				A0B7D9C42C35DF710023147F /* Lightning_StudyUITestsLaunchTests.swift */,
 			);
 			path = "Lightning StudyUITests";
+			sourceTree = "<group>";
+		};
+		A0B7D9D12C35DFFE0023147F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7D9AA2C35DF710023147F /* Assets.xcassets */,
+				A0B7D9AF2C35DF710023147F /* Info.plist */,
+				A0B7D9AC2C35DF710023147F /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A0B7D9D22C35E0050023147F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7D9A12C35DF700023147F /* AppDelegate.swift */,
+				A0B7D9A32C35DF700023147F /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A0B7D9D32C35E0080023147F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7D9A52C35DF700023147F /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A0B7D9D42C35E00D0023147F /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +262,6 @@
 			files = (
 				A0B7D9AE2C35DF710023147F /* LaunchScreen.storyboard in Resources */,
 				A0B7D9AB2C35DF710023147F /* Assets.xcassets in Resources */,
-				A0B7D9A92C35DF700023147F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A0B7D9A72C35DF700023147F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0B7D9A82C35DF700023147F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A0B7D9AC2C35DF710023147F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,12 +463,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lightning Study/Info.plist";
+				INFOPLIST_FILE = "Lightning Study/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +474,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Bandeira.Lightning-Study";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,12 +492,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lightning Study/Info.plist";
+				INFOPLIST_FILE = "Lightning Study/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,6 +503,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Bandeira.Lightning-Study";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
