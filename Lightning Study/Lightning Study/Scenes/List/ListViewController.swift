@@ -1,7 +1,8 @@
+import SnapKit
 import UIKit
 
 protocol ListDisplaying: AnyObject {
-    func displaySomething()
+    func displayNodes(with nodes: [Node])
 }
 
 private extension ListViewController.Layout {
@@ -17,16 +18,28 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
     
     // MARK: - Component(s).
     private lazy var tableView = TableView<Section>()
+        .register(cells: ListCell.self)
     
     // MARK: - Override(s).
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
     
     // MARK: - ViewConfiguration.
-    override func buildViewHierarchy() {}
+    override func buildViewHierarchy() {
+        view.addSubview(tableView)
+    }
     
-    override func setupConstraints() {}
+    override func setupConstraints() {
+        tableView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
         
     override func configureViews() {
-        view.background(color: .init(.systemPink))
+        view.background(color: .init(.white))
+        viewModel?.getNodes()
     }
     
     // MARK: - Method(s).
@@ -39,7 +52,7 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
 
 // MARK: - ListDisplaying
 extension ListViewController: ListDisplaying {
-    func displaySomething() {
-        // template
+    func displayNodes(with nodes: [Node]) {
+        tableView.add(rows: nodes.map { TableViewRow<ListCell>(model: $0) }, in: .list)
     }
 }
