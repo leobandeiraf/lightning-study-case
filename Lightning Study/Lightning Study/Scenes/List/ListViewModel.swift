@@ -1,13 +1,13 @@
 import Foundation
 
 protocol ListViewModeling: AnyObject {
-    func doSomething()
+    func getNodes()
 }
 
 final class ListViewModel {
     // MARK: - Property(ies).
     private let service: ListServicing
-    weak var display: ListDisplaying?
+    weak var viewController: ListDisplaying?
 
     // MARK: - Initialization.
     init(service: ListServicing) {
@@ -17,7 +17,15 @@ final class ListViewModel {
 
 // MARK: - ListViewModeling.
 extension ListViewModel: ListViewModeling {
-    func doSomething() {
-        // template
+    func getNodes() {
+        service.getTopNodes { [weak self] result in
+            switch result {
+            case .success(let model):
+                guard let nodes = model else { return }
+                self?.viewController?.displayNodes(with: nodes)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
 }
