@@ -1,10 +1,14 @@
 import Foundation
 
-struct Node: Decodable {
+struct Node: Decodable, Equatable {
     let publicKey, alias: String
     let channels, capacity: Int
     let firstSeen, updatedAt: Double
     let city, country: Place?
+    
+    static func == (lhs: Node, rhs: Node) -> Bool {
+        lhs.publicKey == rhs.publicKey
+    }
 }
 
 struct Place: Decodable {
