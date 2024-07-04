@@ -24,8 +24,8 @@ extension ListViewModel: ListViewModeling {
             switch result {
             case .success(let model):
                 self?.viewController?.displayNodes(with: model)
-            case .failure(let failure):
-                print(failure)
+            case .failure:
+                self?.viewController?.displayError()
             }
         }
     }
