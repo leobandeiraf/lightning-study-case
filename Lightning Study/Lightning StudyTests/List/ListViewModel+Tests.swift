@@ -3,12 +3,17 @@ import XCTest
 
 private class ListDisplayingSpy: ListDisplaying {
     enum Message: Equatable {
+        case displayError
         case displayLoading(Bool)
         case displayNodes([Node])
     }
 
     private(set) var messages: [Message] = []
    
+    func displayError() {
+        messages.append(.displayError)
+    }
+    
     func displayLoading(_ isLoading: Bool) {
         messages.append(.displayLoading(isLoading))
     }
@@ -19,7 +24,7 @@ private class ListDisplayingSpy: ListDisplaying {
 }
 
 private class ListServiceMock: ListServicing {
-    var nodeExpectedResult: Result<[Node], HTTPError> = .success([.fixture()])
+    var nodeExpectedResult: Result<[Node], HTTPError> = .failure(.noInternet)
     func getTopNodes(completion: @escaping (Result<[Node], HTTPError>) -> Void) {
         completion(nodeExpectedResult)
     }
@@ -47,9 +52,18 @@ private extension ListViewModelTests {
 final class ListViewModelTests: XCTestCase {
     func testGetNode_WhenSuccess_ShouldCallDisplayNodes() {
         let args = makeSUT()
-
+        args.serviceMock.nodeExpectedResult = .success([.fixture()])
+        
         args.sut.getNodes()
 
         XCTAssertEqual(args.displaySpy.messages, [.displayLoading(true), .displayLoading(false), .displayNodes([.fixture()])])
+    }
+    
+    func testGetNode_WhenFailue_ShouldCallDisplayError() {
+        let args = makeSUT()
+        
+        args.sut.getNodes()
+
+        XCTAssertEqual(args.displaySpy.messages, [.displayLoading(true), .displayLoading(false), .displayError])
     }
 }
