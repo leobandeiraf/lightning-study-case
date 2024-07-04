@@ -10,7 +10,7 @@ private class ListDisplayingSpy: ListDisplaying {
     private(set) var messages: [Message] = []
    
     func displayLoading(_ isLoading: Bool) {
-        messages.append(.displayLoading(true))
+        messages.append(.displayLoading(isLoading))
     }
     
     func displayNodes(with nodes: [Node]) {
