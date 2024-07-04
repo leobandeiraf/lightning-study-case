@@ -173,4 +173,8 @@ final class ListCell: TableViewCell {
             $0.height.equalTo(1)
         }
     }
+    
+    func configureViews() {
+        selectionStyle = .none
+    }
 }
