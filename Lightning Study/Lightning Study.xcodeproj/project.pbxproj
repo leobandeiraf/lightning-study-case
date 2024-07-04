@@ -86,6 +86,8 @@
 		A0B7DA972C35FA9D0023147F /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA962C35FA9D0023147F /* UIStackView+Extensions.swift */; };
 		A0B7DA992C35FE130023147F /* ListEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA982C35FE130023147F /* ListEndpoints.swift */; };
 		A0B7DA9B2C360F0C0023147F /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA9A2C360F0C0023147F /* Double+Extensions.swift */; };
+		A0B7DA9D2C3618290023147F /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA9C2C3618290023147F /* Color+Assets.swift */; };
+		A0B7DA9F2C361D3F0023147F /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA9E2C361D3F0023147F /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +190,8 @@
 		A0B7DA962C35FA9D0023147F /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		A0B7DA982C35FE130023147F /* ListEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEndpoints.swift; sourceTree = "<group>"; };
 		A0B7DA9A2C360F0C0023147F /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		A0B7DA9C2C3618290023147F /* Color+Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Assets.swift"; sourceTree = "<group>"; };
+		A0B7DA9E2C361D3F0023147F /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +366,7 @@
 				A0B7D9F12C35E31B0023147F /* UITableViewCell+Extensions.swift */,
 				A0B7D9F22C35E31B0023147F /* UITableViewHeaderFooterView+Extensions.swift */,
 				A0B7D9EF2C35E31B0023147F /* UIView+Extensions.swift */,
+				A0B7DA9E2C361D3F0023147F /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				A0B7DA052C35E4D50023147F /* UIColor+Hexadecimal.swift */,
 				A0B7DA062C35E4D50023147F /* Color+Equatable.swift */,
 				A0B7DA072C35E4D50023147F /* Color.swift */,
+				A0B7DA9C2C3618290023147F /* Color+Assets.swift */,
 				A0B7DA082C35E4D50023147F /* UILabel+Color.swift */,
 			);
 			path = Color;
@@ -747,6 +753,7 @@
 				A0B7D9FB2C35E3F20023147F /* ViewRepresentable.swift in Sources */,
 				A0B7DA562C35E7EF0023147F /* RequestBuilder.swift in Sources */,
 				A0B7DA232C35E4D50023147F /* Color+Equatable.swift in Sources */,
+				A0B7DA9F2C361D3F0023147F /* Int+Extensions.swift in Sources */,
 				A0B7D9A22C35DF700023147F /* AppDelegate.swift in Sources */,
 				A0B7D9F52C35E31B0023147F /* UITableViewCell+Extensions.swift in Sources */,
 				A0B7DA212C35E4D50023147F /* UITextView+Color.swift in Sources */,
@@ -766,6 +773,7 @@
 				A0B7D9A42C35DF700023147F /* SceneDelegate.swift in Sources */,
 				A0B7DA282C35E4D50023147F /* Opacity.swift in Sources */,
 				A0B7DA622C35EEA90023147F /* Text.swift in Sources */,
+				A0B7DA9D2C3618290023147F /* Color+Assets.swift in Sources */,
 				A0B7D9F32C35E31B0023147F /* UIView+Extensions.swift in Sources */,
 				A0B7DA1E2C35E4D50023147F /* UIView+Color.swift in Sources */,
 				A0B7DA3E2C35E7A10023147F /* ListViewModel.swift in Sources */,
