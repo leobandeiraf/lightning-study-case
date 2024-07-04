@@ -12,8 +12,8 @@ class HTTP: HTTPProtocol {
     
     func request<Model: Decodable>(
         service: NativeRequestType,
-        with model: Model.Type?,
-        completion: @escaping (Result<Model?, HTTPError>) -> Void) {
+        with model: Model.Type,
+        completion: @escaping (Result<Model, HTTPError>) -> Void) {
             guard let service = RequestBuilder.build(from: service) else {
                 completion(.failure(.noData))
                 return
@@ -32,15 +32,10 @@ class HTTP: HTTPProtocol {
                     }
                     
                     try ErrorResponseBuilder.build(from: response, error: error, data: data)
-                    if response.statusCode == 204 {
-                        completion(.success(nil))
-                        return
-                    }
                     
-                    let object = try HTTPDecodeBuilder.build(from: data,
-                                                             objectType: Model.self)
-                    
+                    let object = try HTTPDecodeBuilder.build(from: data, objectType: Model.self)
                     completion(.success(object))
+                    
                     self.prettyPrint(service: service, data: data)
                 } catch {
                     let error = error as! HTTPError
