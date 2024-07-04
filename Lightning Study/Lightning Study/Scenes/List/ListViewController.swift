@@ -23,7 +23,7 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
     // MARK: - Override(s).
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - ViewConfiguration.
@@ -38,6 +38,7 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
     }
         
     override func configureViews() {
+        title = "Nodes"
         view.background(color: .init(.white))
         viewModel?.getNodes()
     }
