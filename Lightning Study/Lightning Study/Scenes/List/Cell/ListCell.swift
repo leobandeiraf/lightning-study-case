@@ -74,13 +74,17 @@ final class ListCell: TableViewCell {
     
     private lazy var firstSeenLabelText = Text("Primeira vez visto: ")
         .font(Font.label)
+        .foreground(color: .neutralColor03)
         .bold()
     
     private lazy var firstSeenText = Text()
         .font(Font.label)
+        .foreground(color: .neutralColor03)
     
     private lazy var regionText = Text()
         .font(Font.label)
+        .foreground(color: .mainColor)
+        .multilineTextAlignment(.right)
     
     // MARK: - Initialization.
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -100,7 +104,7 @@ final class ListCell: TableViewCell {
         capacityText.value = model.capacity.bitcoin
         publicKeyText.value = model.publicKey
         channelsText.value = model.channels.description
-        firstSeenText.value = String()
+        firstSeenText.value = model.firstSeen.date
         guard let city = model.city else {
             regionText.value = "\(model.country?.ptBR ?? String())."
             return self
@@ -111,16 +115,16 @@ final class ListCell: TableViewCell {
     
     // MARK: - View Configurable.
     func buildViewHierarchy() {
-        contentView.addSubviews(updatedAtSection, aliasText, capacityText, bodySection)
+        contentView.addSubviews(updatedAtSection, aliasText, capacityText, bodySection, footerSection, regionText)
         
         updatedAtSection.addArrangedSubviews(updatedAtLabelText, updatedAtText)
         
         bodySection.addArrangedSubviews(publicKeySection, channelsSection)
         publicKeySection.addArrangedSubviews(publicKeyLabelText, publicKeyText)
-        channelsSection.addArrangedSubviews(channelsLabelText, channelsText)
-//        
-//        footerSection.addArrangedSubviews(firstSeenSection, regionText)
-//        firstSeenSection.addArrangedSubviews(firstSeenLabelText, firstSeenText)
+        channelsSection.addArrangedSubviews(channelsLabelText, channelsText, firstSeenSection)
+        
+        footerSection.addArrangedSubviews(firstSeenSection)
+        firstSeenSection.addArrangedSubviews(firstSeenLabelText, firstSeenText)
         
     }
     
@@ -142,6 +146,16 @@ final class ListCell: TableViewCell {
         
         bodySection.snp.makeConstraints {
             $0.top.equalTo(capacityText.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        footerSection.snp.makeConstraints {
+            $0.top.equalTo(bodySection.snp.bottom).offset(2)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        regionText.snp.makeConstraints {
+            $0.top.equalTo(footerSection.snp.bottom).offset(2)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().offset(-8)
         }
