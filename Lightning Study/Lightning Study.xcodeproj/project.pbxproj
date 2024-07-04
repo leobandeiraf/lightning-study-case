@@ -90,6 +90,7 @@
 		A0B7DAA72C3626F70023147F /* NodesModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAA62C3626F70023147F /* NodesModel+Fixture.swift */; };
 		A0B7DAAA2C362C310023147F /* ListViewModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */; };
 		A0B7DAAD2C36D60A0023147F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A0B7DAAC2C36D60A0023147F /* Lottie */; };
+		A0B7DAB02C36D75E0023147F /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B7DAAF2C36D75E0023147F /* Loading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,7 @@
 		A0B7DA9E2C361D3F0023147F /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		A0B7DAA62C3626F70023147F /* NodesModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NodesModel+Fixture.swift"; sourceTree = "<group>"; };
 		A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewModel+Tests.swift"; sourceTree = "<group>"; };
+		A0B7DAAF2C36D75E0023147F /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 		A0B7D9D12C35DFFE0023147F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7DAAE2C36D7560023147F /* Animations */,
 				A0B7DA732C35EF540023147F /* Fonts */,
 				A0B7D9AA2C35DF710023147F /* Assets.xcassets */,
 				A0B7D9AF2C35DF710023147F /* Info.plist */,
@@ -587,6 +590,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A0B7DAAE2C36D7560023147F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7DAAF2C36D75E0023147F /* Loading.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -709,6 +720,7 @@
 				A0B7DA872C35EF540023147F /* Roboto-LightItalic.ttf in Resources */,
 				A0B7DA892C35EF540023147F /* Roboto-BlackItalic.ttf in Resources */,
 				A0B7DA822C35EF540023147F /* Roboto-Light.ttf in Resources */,
+				A0B7DAB02C36D75E0023147F /* Loading.json in Resources */,
 				A0B7DA882C35EF540023147F /* Roboto-Italic.ttf in Resources */,
 				A0B7DA842C35EF540023147F /* Roboto-MediumItalic.ttf in Resources */,
 				A0B7DA8C2C35EF540023147F /* Roboto-Black.ttf in Resources */,
