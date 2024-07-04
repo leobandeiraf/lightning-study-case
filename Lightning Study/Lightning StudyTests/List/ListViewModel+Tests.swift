@@ -50,6 +50,6 @@ final class ListViewModelTests: XCTestCase {
 
         args.sut.getNodes()
 
-        XCTAssertEqual(args.displaySpy.messages, [.displayNodes([.fixture()])])
+        XCTAssertEqual(args.displaySpy.messages, [.displayLoading(true), .displayLoading(false), .displayNodes([.fixture()])])
     }
 }
