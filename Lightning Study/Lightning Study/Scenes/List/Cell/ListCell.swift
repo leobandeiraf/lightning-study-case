@@ -73,6 +73,7 @@ final class ListCell: TableViewCell {
     }()
     
     private lazy var firstSeenLabelText = Text("Primeira vez visto: ")
+        .contentHugging(.required, .horizontal)
         .font(Font.label)
         .foreground(color: .neutralColor03)
         .bold()
@@ -85,6 +86,12 @@ final class ListCell: TableViewCell {
         .font(Font.label)
         .foreground(color: .mainColor)
         .multilineTextAlignment(.right)
+    
+    private lazy var lineView: UIView = {
+        let view = UIView()
+        view.background(color: .neutralColor05)
+        return view
+    }()
     
     // MARK: - Initialization.
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -115,7 +122,7 @@ final class ListCell: TableViewCell {
     
     // MARK: - View Configurable.
     func buildViewHierarchy() {
-        contentView.addSubviews(updatedAtSection, aliasText, capacityText, bodySection, footerSection, regionText)
+        contentView.addSubviews(updatedAtSection, aliasText, capacityText, bodySection, footerSection, regionText, lineView)
         
         updatedAtSection.addArrangedSubviews(updatedAtLabelText, updatedAtText)
         
@@ -125,7 +132,7 @@ final class ListCell: TableViewCell {
         
         footerSection.addArrangedSubviews(firstSeenSection)
         firstSeenSection.addArrangedSubviews(firstSeenLabelText, firstSeenText)
-        
+    
     }
     
     func setupConstraints() {
@@ -155,9 +162,15 @@ final class ListCell: TableViewCell {
         }
         
         regionText.snp.makeConstraints {
-            $0.top.equalTo(footerSection.snp.bottom).offset(2)
+            $0.top.equalTo(footerSection.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        lineView.snp.makeConstraints {
+            $0.top.equalTo(regionText.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().offset(-8)
+            $0.height.equalTo(1)
         }
     }
 }
