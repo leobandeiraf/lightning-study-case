@@ -21,8 +21,7 @@ extension ListViewModel: ListViewModeling {
         service.getTopNodes { [weak self] result in
             switch result {
             case .success(let model):
-                guard let nodes = model else { return }
-                self?.viewController?.displayNodes(with: nodes)
+                self?.viewController?.displayNodes(with: model)
             case .failure(let failure):
                 print(failure)
             }
