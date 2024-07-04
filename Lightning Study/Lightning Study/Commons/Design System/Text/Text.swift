@@ -43,7 +43,7 @@ class Text: UILabel {
 
     // MARK: - Private Property(ies).
     var defaultFont: any FontStyle = Font.paragraph1
-    private var defaultForegroundColor: Color = .init(.black)
+    private var defaultForegroundColor: Color = .black
     private var maximumPointSize: CGFloat?
 
     private var isBold = false
