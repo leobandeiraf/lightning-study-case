@@ -91,6 +91,7 @@
 		A0B7DAAA2C362C310023147F /* ListViewModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */; };
 		A0B7DAAD2C36D60A0023147F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A0B7DAAC2C36D60A0023147F /* Lottie */; };
 		A0B7DAB02C36D75E0023147F /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B7DAAF2C36D75E0023147F /* Loading.json */; };
+		A0B7DAB32C36DEDC0023147F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAB22C36DEDC0023147F /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,7 @@
 		A0B7DAA62C3626F70023147F /* NodesModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NodesModel+Fixture.swift"; sourceTree = "<group>"; };
 		A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewModel+Tests.swift"; sourceTree = "<group>"; };
 		A0B7DAAF2C36D75E0023147F /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
+		A0B7DAB22C36DEDC0023147F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,8 +448,9 @@
 		A0B7DA372C35E78F0023147F /* List */ = {
 			isa = PBXGroup;
 			children = (
-				A0B7DA5D2C35EDF70023147F /* Cell */,
-				A0B7DA902C35F2050023147F /* Model */,
+				A0B7DA5D2C35EDF70023147F /* Cells */,
+				A0B7DA902C35F2050023147F /* Models */,
+				A0B7DAB12C36DEB80023147F /* Views */,
 				A0B7DA382C35E7A10023147F /* ListCoordinator.swift */,
 				A0B7DA982C35FE130023147F /* ListEndpoints.swift */,
 				A0B7DA392C35E7A10023147F /* ListViewController.swift */,
@@ -493,12 +496,12 @@
 			path = Builders;
 			sourceTree = "<group>";
 		};
-		A0B7DA5D2C35EDF70023147F /* Cell */ = {
+		A0B7DA5D2C35EDF70023147F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				A0B7DA5E2C35EE070023147F /* ListCell.swift */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A0B7DA602C35EEA90023147F /* Text */ = {
@@ -565,12 +568,12 @@
 			path = Bundle;
 			sourceTree = "<group>";
 		};
-		A0B7DA902C35F2050023147F /* Model */ = {
+		A0B7DA902C35F2050023147F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A0B7DA912C35F2F80023147F /* NodesModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A0B7DAA02C36260C0023147F /* List */ = {
@@ -596,6 +599,14 @@
 				A0B7DAAF2C36D75E0023147F /* Loading.json */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		A0B7DAB12C36DEB80023147F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7DAB22C36DEDC0023147F /* LoadingViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -801,6 +812,7 @@
 				A0B7DA992C35FE130023147F /* ListEndpoints.swift in Sources */,
 				A0B7DA262C35E4D50023147F /* Radius.swift in Sources */,
 				A0B7DA722C35EF230023147F /* Font.swift in Sources */,
+				A0B7DAB32C36DEDC0023147F /* LoadingViewController.swift in Sources */,
 				A0B7DA252C35E4D50023147F /* UILabel+Color.swift in Sources */,
 				A0B7D9F62C35E31B0023147F /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 				A0B7DA712C35EF230023147F /* UILabel+Extensions.swift in Sources */,

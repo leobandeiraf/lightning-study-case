@@ -21,6 +21,8 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
     private lazy var tableView = TableView<Section>()
         .register(cells: ListCell.self)
     
+    private lazy var loadingView = LoadingViewController()
+    
     // MARK: - Override(s).
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,7 +57,7 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
 // MARK: - ListDisplaying
 extension ListViewController: ListDisplaying {
     func displayLoading(_ value: Bool) {
-        
+        value ? loadingView.start(in: self) : loadingView.stop(in: self)
     }
     
     func displayNodes(with nodes: [Node]) {

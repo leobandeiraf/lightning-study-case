@@ -18,7 +18,9 @@ final class ListViewModel {
 // MARK: - ListViewModeling.
 extension ListViewModel: ListViewModeling {
     func getNodes() {
+        viewController?.displayLoading(true)
         service.getTopNodes { [weak self] result in
+            self?.viewController?.displayLoading(false)
             switch result {
             case .success(let model):
                 self?.viewController?.displayNodes(with: model)
