@@ -10,17 +10,25 @@ final class ListCell: TableViewCell {
     
     private lazy var updatedAtLabelText = Text("Última atualização: ")
         .font(Font.label)
+        .foreground(color: .neutralColor03)
         .bold()
     
     private lazy var updatedAtText = Text()
         .font(Font.label)
+        .foreground(color: .neutralColor03)
     
     private lazy var aliasText = Text()
+        .font(Font.headline)
+        .foreground(color: .mainColor)
+    
+    private lazy var capacityText = Text()
         .font(Font.subheadline)
+        .multilineTextAlignment(.right)
     
     private lazy var bodySection: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.spacing = 2
         return stackView
     }()
     
@@ -35,18 +43,24 @@ final class ListCell: TableViewCell {
     }()
     
     private lazy var publicKeyLabelText = Text("Chave pública: ")
-        .font(Font.paragraph2)
+        .font(Font.label)
+        .foreground(color: .neutralColor03)
         .bold()
     
     private lazy var publicKeyText = Text()
-        .font(Font.paragraph2)
+        .compressionResistance(.defaultLow, .horizontal)
+        .font(Font.label)
+        .foreground(color: .neutralColor03)
     
-    private lazy var channelsLabelText = Text("Canais")
-        .font(Font.paragraph2)
+    private lazy var channelsLabelText = Text("Canais: ")
+        .font(Font.label)
+        .foreground(color: .neutralColor03)
         .bold()
     
     private lazy var channelsText = Text()
-        .font(Font.paragraph2)
+        .compressionResistance(.defaultLow, .horizontal)
+        .font(Font.label)
+        .foreground(color: .neutralColor03)
     
     private lazy var footerSection: UIStackView = {
         let stackView = UIStackView()
@@ -57,9 +71,6 @@ final class ListCell: TableViewCell {
         let stackView = UIStackView()
         return stackView
     }()
-    
-    private lazy var capacityText = Text()
-        .font(Font.paragraph1)
     
     private lazy var firstSeenLabelText = Text("Primeira vez visto: ")
         .font(Font.label)
@@ -86,27 +97,27 @@ final class ListCell: TableViewCell {
     func configure(with model: Node) -> Self {
         updatedAtText.value = model.updatedAt.date
         aliasText.value = model.alias
+        capacityText.value = model.capacity.bitcoin
         publicKeyText.value = model.publicKey
         channelsText.value = model.channels.description
-        capacityText.value = model.capacity.description
         firstSeenText.value = String()
         guard let city = model.city else {
-            regionText.value = "\(model.country.ptBR)."
+            regionText.value = "\(model.country?.ptBR ?? String())."
             return self
         }
-        regionText.value = "\(model.city?.ptBR ?? String()), \(model.country.ptBR)."
+        regionText.value = "\(model.city?.ptBR ?? String()), \(model.country?.ptBR ?? String())."
         return self
     }
     
     // MARK: - View Configurable.
     func buildViewHierarchy() {
-//        contentView.addSubviews(headerSection, bodySection, capacityText, footerSection)
-        contentView.addSubviews(updatedAtSection, aliasText)
+        contentView.addSubviews(updatedAtSection, aliasText, capacityText, bodySection)
+        
         updatedAtSection.addArrangedSubviews(updatedAtLabelText, updatedAtText)
         
-//        bodySection.addArrangedSubviews(publicKeySection, channelsSection)
-//        publicKeySection.addArrangedSubviews(publicKeyLabelText, publicKeyText)
-//        channelsSection.addArrangedSubviews(channelsLabelText, channelsText)
+        bodySection.addArrangedSubviews(publicKeySection, channelsSection)
+        publicKeySection.addArrangedSubviews(publicKeyLabelText, publicKeyText)
+        channelsSection.addArrangedSubviews(channelsLabelText, channelsText)
 //        
 //        footerSection.addArrangedSubviews(firstSeenSection, regionText)
 //        firstSeenSection.addArrangedSubviews(firstSeenLabelText, firstSeenText)
@@ -121,6 +132,16 @@ final class ListCell: TableViewCell {
         
         aliasText.snp.makeConstraints {
             $0.top.equalTo(updatedAtSection.snp.bottom).offset(2)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        capacityText.snp.makeConstraints {
+            $0.top.equalTo(aliasText.snp.bottom).offset(2)
+            $0.leading.trailing.equalToSuperview().inset(16)
+        }
+        
+        bodySection.snp.makeConstraints {
+            $0.top.equalTo(capacityText.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().offset(-8)
         }
