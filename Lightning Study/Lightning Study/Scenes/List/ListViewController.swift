@@ -2,6 +2,7 @@ import SnapKit
 import UIKit
 
 protocol ListDisplaying: AnyObject {
+    func displayError()
     func displayLoading(_ isLoading: Bool)
     func displayNodes(with nodes: [Node])
 }
@@ -25,6 +26,8 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
     }()
     
     private lazy var loadingView = LoadingViewController()
+    
+    private lazy var errorView = ErrorView()
     
     // MARK: - Override(s).
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +64,10 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
 
 // MARK: - ListDisplaying
 extension ListViewController: ListDisplaying {
+    func displayError() {
+        tableView.backgroundView(errorView)
+    }
+    
     func displayLoading(_ isLoading: Bool) {
         isLoading ? loadingView.start(in: self) : loadingView.stop(in: self)
     }
