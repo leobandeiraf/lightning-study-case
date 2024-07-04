@@ -92,6 +92,8 @@
 		A0B7DAAD2C36D60A0023147F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A0B7DAAC2C36D60A0023147F /* Lottie */; };
 		A0B7DAB02C36D75E0023147F /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B7DAAF2C36D75E0023147F /* Loading.json */; };
 		A0B7DAB32C36DEDC0023147F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAB22C36DEDC0023147F /* LoadingViewController.swift */; };
+		A0B7DAB52C36E7F00023147F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAB42C36E7F00023147F /* ErrorView.swift */; };
+		A0B7DAB72C36E8890023147F /* Error.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B7DAB62C36E8890023147F /* Error.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +201,8 @@
 		A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewModel+Tests.swift"; sourceTree = "<group>"; };
 		A0B7DAAF2C36D75E0023147F /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
 		A0B7DAB22C36DEDC0023147F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		A0B7DAB42C36E7F00023147F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		A0B7DAB62C36E8890023147F /* Error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Error.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,6 +600,7 @@
 		A0B7DAAE2C36D7560023147F /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7DAB62C36E8890023147F /* Error.json */,
 				A0B7DAAF2C36D75E0023147F /* Loading.json */,
 			);
 			path = Animations;
@@ -604,6 +609,7 @@
 		A0B7DAB12C36DEB80023147F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7DAB42C36E7F00023147F /* ErrorView.swift */,
 				A0B7DAB22C36DEDC0023147F /* LoadingViewController.swift */,
 			);
 			path = Views;
@@ -723,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B7D9AE2C35DF710023147F /* LaunchScreen.storyboard in Resources */,
+				A0B7DAB72C36E8890023147F /* Error.json in Resources */,
 				A0B7D9AB2C35DF710023147F /* Assets.xcassets in Resources */,
 				A0B7DA8A2C35EF540023147F /* Roboto-Bold.ttf in Resources */,
 				A0B7DA862C35EF540023147F /* Roboto-BoldItalic.ttf in Resources */,
@@ -763,6 +770,7 @@
 			files = (
 				A0B7DA512C35E7EF0023147F /* URLSessionProtocol.swift in Sources */,
 				A0B7DA702C35EF230023147F /* BoldedStyle.swift in Sources */,
+				A0B7DAB52C36E7F00023147F /* ErrorView.swift in Sources */,
 				A0B7DA5B2C35E7EF0023147F /* HTTPDecodeBuilder.swift in Sources */,
 				A0B7DA6F2C35EF230023147F /* UnderlinedStyle.swift in Sources */,
 				A0B7DA9B2C360F0C0023147F /* Double+Extensions.swift in Sources */,
