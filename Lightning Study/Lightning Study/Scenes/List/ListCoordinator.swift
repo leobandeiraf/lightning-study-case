@@ -2,7 +2,6 @@ import UIKit
 
 protocol ListCoordinating {
     func start()
-    func goToLoading()
 }
 
 final class ListCoordinator {
@@ -29,11 +28,5 @@ extension ListCoordinator: ListCoordinating {
         
         self.navigationController = navigationController
         rootViewController = viewController
-    }
-    
-    func goToLoading() {
-        let viewController = LoadingViewController()
-        viewController.modalPresentationStyle = .overCurrentContext
-        navigationController?.present(viewController, animated: false)
     }
 }
