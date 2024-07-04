@@ -10,16 +10,16 @@ extension Node {
         updatedAt: Double = 0,
         city: Place? = nil,
         country: Place? = nil
-    ) {
-        .init(
+    ) -> Node {
+        Node(
             publicKey: publicKey,
             alias: alias,
             channels: channels,
             capacity: capacity,
             firstSeen: firstSeen,
             updatedAt: updatedAt,
-            city: city?,
-            country: country?
+            city: city,
+            country: country
         )
     }
 }
