@@ -2,6 +2,7 @@ import SnapKit
 import UIKit
 
 protocol ListDisplaying: AnyObject {
+    func displayLoading(_ value: Bool)
     func displayNodes(with nodes: [Node])
 }
 
@@ -53,6 +54,10 @@ final class ListViewController: ViewController<ListViewModeling, ListCoordinatin
 
 // MARK: - ListDisplaying
 extension ListViewController: ListDisplaying {
+    func displayLoading(_ value: Bool) {
+        
+    }
+    
     func displayNodes(with nodes: [Node]) {
         tableView.add(rows: nodes.map { TableViewRow<ListCell>(model: $0) }, in: .list)
     }
