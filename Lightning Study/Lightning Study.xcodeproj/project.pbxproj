@@ -87,8 +87,8 @@
 		A0B7DA9B2C360F0C0023147F /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA9A2C360F0C0023147F /* Double+Extensions.swift */; };
 		A0B7DA9D2C3618290023147F /* Color+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA9C2C3618290023147F /* Color+Assets.swift */; };
 		A0B7DA9F2C361D3F0023147F /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DA9E2C361D3F0023147F /* Int+Extensions.swift */; };
-		A0B7DAA42C3626410023147F /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAA32C3626410023147F /* ListViewModelTests.swift */; };
 		A0B7DAA72C3626F70023147F /* NodesModel+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAA62C3626F70023147F /* NodesModel+Fixture.swift */; };
+		A0B7DAAA2C362C310023147F /* ListViewModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,8 +192,8 @@
 		A0B7DA9A2C360F0C0023147F /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		A0B7DA9C2C3618290023147F /* Color+Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Assets.swift"; sourceTree = "<group>"; };
 		A0B7DA9E2C361D3F0023147F /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
-		A0B7DAA32C3626410023147F /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		A0B7DAA62C3626F70023147F /* NodesModel+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NodesModel+Fixture.swift"; sourceTree = "<group>"; };
+		A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewModel+Tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -572,7 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				A0B7DAA52C3626E90023147F /* Model */,
-				A0B7DAA32C3626410023147F /* ListViewModelTests.swift */,
+				A0B7DAA92C362C310023147F /* ListViewModel+Tests.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -804,7 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B7DAA42C3626410023147F /* ListViewModelTests.swift in Sources */,
+				A0B7DAAA2C362C310023147F /* ListViewModel+Tests.swift in Sources */,
 				A0B7DAA72C3626F70023147F /* NodesModel+Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1036,7 +1036,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Bandeira.Lightning-StudyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "Lightning StudyTests/List/Lightning StudyTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1058,7 +1057,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Bandeira.Lightning-StudyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "Lightning StudyTests/List/Lightning StudyTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lightning Study.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lightning Study";
