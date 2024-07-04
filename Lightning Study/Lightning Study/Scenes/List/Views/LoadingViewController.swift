@@ -34,9 +34,21 @@ final class LoadingViewController: UIViewController {
     }
     
     // MARK: - Method(s).
+    private func animateStart() {
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: .curveEaseInOut) {
+            self.dimmedView.opacity(.light)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut) {
+                self.containerView.opacity(.full)
+                self.animationView.opacity(.full)
+            }
+        }
+    }
+    
     func start(in viewController: UIViewController) {
         modalPresentationStyle = .overCurrentContext
         viewController.present(self, animated: false)
+        animateStart()
     }
     
     func stop(in viewController: UIViewController) {
@@ -69,17 +81,6 @@ extension LoadingViewController: ViewConfigurable {
         animationView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(16)
             $0.size.equalTo(100)
-        }
-    }
-    
-    func configureViews() {
-        UIView.animate(withDuration: 0.35, delay: 0.0, options: .curveEaseInOut) {
-            self.dimmedView.opacity(.light)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut) {
-                self.containerView.opacity(.full)
-                self.animationView.opacity(.full)
-            }
         }
     }
 }
